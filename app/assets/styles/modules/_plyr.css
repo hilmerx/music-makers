@@ -1,0 +1,10 @@
+.plyr {
+
+  border-radius: 4px;
+  margin-bottom: 15px;
+
+  &__container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}

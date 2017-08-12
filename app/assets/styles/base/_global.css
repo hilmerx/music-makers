@@ -1,0 +1,25 @@
+@font-face {
+		font-family: 'Egyptienne'; font-weight: normal;
+font-style: normal;
+		src: local('Egyptienne'), local('Egyptienne'), url('../fonts/egyptienne55roman.ttf') format('truetype');
+}
+
+
+body {
+  font-family: 'Egyptienne', times;
+  color: $mainBlack;
+}
+
+img {
+  /*max-width: 100%;*/
+  height: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $mainBlack;
+  text-decoration: underline;
+}

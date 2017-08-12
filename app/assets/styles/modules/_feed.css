@@ -1,0 +1,414 @@
+
+
+.feed {
+  height:21rem;
+  width: 111rem;
+  transition: all .3s ease-out;
+
+  &__text {
+    position: absolute;
+    background-color: rgba(116 ,116 ,116, 0.6);
+    font-size: 0.875rem;
+    color: #eaeaea;
+    padding: 0.15rem 0.25rem 0 0.25rem ;
+    z-index:1;
+    cursor: pointer;
+
+  }
+
+  &__module {
+    float: left;
+    width: 33%;
+    height: 33%;
+    position:relative;
+    /*border: 1px solid black;*/
+
+    &--height-of-two {
+      height: 66%;
+    }
+    &:after {
+      @mixin: clearfix;
+    }
+
+  }
+
+  &__image {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--vert-center {
+      top:50%;
+      transform: translateY(-50%);
+
+    }
+
+    &--vert-bottom {
+      bottom: 0;
+    }
+
+    &--hor-right {
+      right: 0;
+    }
+
+    &--hor-center {
+      left: 0;
+      right: 0;
+      text-align:center;
+    }
+
+  }
+
+    &__image--1-1-1 {
+      overflow: hidden;
+      width: 150px;
+      height: 94px;
+      & img {
+        position:relative;
+        left:-3px;
+        top:-1px;
+      }
+    }
+
+    &__image--1-1-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 94px;
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--1-1-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 94px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--1-2-1 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 87px;
+      & img {
+        position:relative;
+        left:-6px;
+        top:-3px;
+      }
+    }
+
+    &__image--1-2-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 87px;
+      & img {
+        position:relative;
+        left:-6px;
+        top:-3px;
+      }
+    }
+
+    &__image--1-2-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 87px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--1-3-1 {
+      overflow: hidden;
+      width: 155px;
+      height: 89px;
+      & img {
+        position:relative;
+        left:-3px;
+        top:-1px;
+      }
+    }
+
+    &__image--1-3-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 99px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--1-3-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 99px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--2-1-1 {
+      overflow: hidden;
+      width: 150px;
+      height: 94px;
+      & img {
+        position:relative;
+        left:-3px;
+        top:-1px;
+      }
+    }
+
+    &__image--2-1-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 94px;
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--2-1-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 94px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--2-2-1 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 87px;
+      & img {
+        position:relative;
+        left:-6px;
+        top:-3px;
+      }
+    }
+
+    &__image--2-2-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 87px;
+      & img {
+        position:relative;
+        left:-6px;
+        top:-3px;
+      }
+    }
+
+    &__image--2-2-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 87px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--2-3-1 {
+      overflow: hidden;
+      width: 155px;
+      height: 89px;
+      & img {
+        position:relative;
+        left:-3px;
+        top:-1px;
+      }
+    }
+
+    &__image--2-3-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 99px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--2-3-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 99px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+
+    &__image--3-1-1 {
+      overflow: hidden;
+      width: 150px;
+      height: 94px;
+      & img {
+        position:relative;
+        left:-3px;
+        top:-1px;
+      }
+    }
+
+    &__image--3-1-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 94px;
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--3-1-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 94px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--3-2-1 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 87px;
+      & img {
+        position:relative;
+        left:-6px;
+        top:-3px;
+      }
+    }
+
+    &__image--3-2-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 87px;
+      & img {
+        position:relative;
+        left:-6px;
+        top:-3px;
+      }
+    }
+
+    &__image--3-2-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 87px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:-10px;
+      }
+    }
+
+    &__image--3-3-1 {
+      overflow: hidden;
+      width: 155px;
+      height: 89px;
+      & img {
+        position:relative;
+        left:-3px;
+        top:-1px;
+      }
+    }
+
+    &__image--3-3-2 {
+      margin:auto;
+      overflow: hidden;
+      width: 150px;
+      height: 99px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+    &__image--3-3-3 {
+      overflow: hidden;
+      width: 159px;
+      height: 99px;
+
+      & img {
+        position:relative;
+        left:0;
+        top:0;
+      }
+    }
+
+  &__page {
+    /*margin-right: 100px;*/
+    /*background-color:blue;*/
+    margin-left: 2rem;
+    margin-right: 2rem;
+    float: left;
+    height: 100%;
+    width: 33rem;
+    &:after {
+      @mixin: clearfix;
+    }
+
+  }
+
+  &--1 {
+    transform:translateX(-1.9rem);
+  }
+
+  &--2 {
+    transform:translateX(-38.9rem);
+  }
+
+  &--3 {
+    transform:translateX(-75.9rem);
+  }
+
+}
