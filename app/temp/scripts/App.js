@@ -14438,6 +14438,7 @@ var Nav = function () {
   }, {
     key: "nextPage",
     value: function nextPage() {
+      // console.log("next")
       var page = Number((0, _jquery2.default)(this.feed).attr('data-page'));
 
       if (page === 1) {
@@ -14462,6 +14463,8 @@ var Nav = function () {
   }, {
     key: "prevPage",
     value: function prevPage() {
+      // console.log("prev")
+
       var page = Number((0, _jquery2.default)(this.feed).attr('data-page'));
 
       if (page === 1) {

@@ -1,9 +1,21 @@
 
 
 .feed {
-  height:21rem;
-  width: 111rem;
+  height:100%;
+  width: 100%;
   transition: all .3s ease-out;
+  /*background-color: red;*/
+  /*margin-top:3rem;*/
+
+  @mixin atSmall {
+    /*margin-top:0;*/
+
+    height: 21rem;
+    width: 111rem;
+    transition: all .3s ease-out;
+  }
+
+
 
   &__text {
     position: absolute;
@@ -13,18 +25,34 @@
     padding: 0.15rem 0.25rem 0 0.25rem ;
     z-index:1;
     cursor: pointer;
-
   }
 
   &__module {
     float: left;
-    width: 33%;
-    height: 33%;
+    width: 100%;
+    height: 7rem;
     position:relative;
     /*border: 1px solid black;*/
+    overflow: hidden;
+    margin-bottom: 1rem;
+
+    @mixin atSmall {
+      float: left;
+      width: 33%;
+      height: 33%;
+      position:relative;
+      margin-bottom: 0;
+
+    }
+
 
     &--height-of-two {
-      height: 66%;
+      /*height: 4rem;*/
+
+      @mixin atSmall {
+        height: 66%;
+      }
+
     }
     &:after {
       @mixin: clearfix;
@@ -36,19 +64,31 @@
     position: absolute;
     cursor: pointer;
     opacity: 0.8;
+    width:100%;
+
+    @mixin atSmall {
+      width:auto;
+    }
 
     &:hover {
       opacity: 1;
     }
 
     &--vert-center {
-      top:50%;
-      transform: translateY(-50%);
+      top: 0;
+      transform: translateY(0);
 
+      @mixin atSmall {
+        top:50%;
+        transform: translateY(-50%);
+      }
     }
 
     &--vert-bottom {
-      bottom: 0;
+      bottom: auto;
+      @mixin atSmall {
+        bottom: 0;
+      }
     }
 
     &--hor-right {
@@ -56,6 +96,7 @@
     }
 
     &--hor-center {
+      /*background-color:red;*/
       left: 0;
       right: 0;
       text-align:center;
@@ -65,12 +106,22 @@
 
     &__image--1-1-1 {
       overflow: hidden;
-      width: 150px;
-      height: 94px;
+      width: 155px;
+      height: 216px;
+
+      @mixin atSmall {
+      }
+
       & img {
         position:relative;
         left:-3px;
-        top:-1px;
+        top:-100px;
+
+        @mixin atSmall {
+          position:relative;
+          left:-3px;
+          top:-1px;
+        }
       }
     }
 
@@ -79,10 +130,20 @@
       overflow: hidden;
       width: 150px;
       height: 94px;
+
+      @mixin atSmall {
+      }
+
       & img {
         position:relative;
         left:0;
         top:0;
+        width: 100%;
+
+        @mixin atSmall {
+          width: auto;
+        }
+
       }
     }
 
@@ -94,7 +155,12 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-40px;
+
+        @mixin atSmall {
+          top:-1px;
+        }
+
       }
     }
 
@@ -111,6 +177,7 @@
     }
 
     &__image--1-2-2 {
+      /*background: red;*/
       margin:auto;
       overflow: hidden;
       width: 150px;
@@ -357,6 +424,7 @@
         position:relative;
         left:-3px;
         top:-1px;
+
       }
     }
 
@@ -385,14 +453,37 @@
       }
     }
 
+    &__image--mobile {
+      @mixin atMobile{
+        height: 100%;
+        width: 100%;
+      }
+
+      & img {
+        @mixin atMobile{
+          width: 100%;
+        }
+      }
+    }
+
+
   &__page {
     /*margin-right: 100px;*/
     /*background-color:blue;*/
-    margin-left: 2rem;
-    margin-right: 2rem;
-    float: left;
-    height: 100%;
-    width: 33rem;
+    /*margin-left: 2rem;*/
+    /*margin-right: 2rem;*/
+    /*float: left;*/
+    /*height: 100%;*/
+    /*width: 33rem;*/
+
+    @mixin atSmall {
+      margin-left: 2rem;
+      margin-right: 2rem;
+      float: left;
+      height: 100%;
+      width: 33rem;
+    }
+
     &:after {
       @mixin: clearfix;
     }
@@ -400,15 +491,20 @@
   }
 
   &--1 {
-    transform:translateX(-1.9rem);
+    transform:translateX(0);
+
+    @mixin atSmall {
+      transform:translateX(-2rem);
+    }
+
   }
 
   &--2 {
-    transform:translateX(-38.9rem);
+    transform:translateX(-39rem);
   }
 
   &--3 {
-    transform:translateX(-75.9rem);
+    transform:translateX(-76rem);
   }
 
 }

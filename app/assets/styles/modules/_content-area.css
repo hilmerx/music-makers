@@ -1,18 +1,36 @@
 .content-area{
-  width: 33rem;
-  height:26rem;
-  position:absolute;
-  top:53%;
-  left:48%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  max-height:none;
+  position:relative;
   overflow:hidden;
+  margin-top:5rem;
+  margin-left:15rem;
+  /*background-color: red;*/
+  /*display:none;*/
 
+  @mixin atSmall {
+    position:absolute;
+    width: 33rem;
+    height:26rem;
+    overflow:hidden;
+    margin-top: 0;
+    margin-left: 0;
+    top:53%;
+    left:48%;
+    transform: translate(-50%, -50%);
+  }
 
   &__menu {
     width: 100%;
     text-align:left;
     display:block;
     padding-bottom:2rem;
+    display:none;
+
+    @mixin atSmall {
+      display:block;
+    }
+
   }
 
   &__menu-text {

@@ -1,31 +1,58 @@
 .backbone {
-  width: 70rem;
+  width: 100%;
   margin: auto;
   overflow: hidden;
   text-align: center;
   z-index:-15;
 
-
-
   @mixin atSmall {
-
+    width: 62.5rem;
   }
 
   &__logo {
-    padding-top: 1.1rem;
-    padding-bottom: 1.1rem;
-    left: 50%;
+    padding: 1.1rem 1rem 1.1rem 1rem;
+    display:block;
+    /*background:red;*/
+    width:100%;
 
+
+    @mixin atSmall {
+      padding-top: 1.1rem;
+      padding-bottom: 1.1rem;
+    }
   }
 
   &__cloud {
-    width: 62.5rem;
-    margin-left:auto;
-    margin-right:auto;
     position:relative;
+    left:-15rem;
+    /*height: 100%;*/
+    /*background-color: red;*/
+
     @mixin atSmall {
+      position:relative;
+      height: auto;
+      transform: translateX(0);
+      width: 62.5rem;
+      margin-left:auto;
+      margin-right:auto;
+      left:0;
+      height: 40rem;
+
+    }
+
+    & > img {
+      max-width:none;
+      position:absolute;
+      top:-6rem;
+      z-index:-99;
+      margin-left:-15rem;
+
+      @mixin atSmall {
+        position:static;
+        margin-left:0;
 
 
+      }
     }
   }
 
