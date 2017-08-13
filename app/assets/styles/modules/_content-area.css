@@ -3,10 +3,7 @@
   max-height:none;
   position:relative;
   overflow:hidden;
-  margin-top:5rem;
-  margin-left:15rem;
-  /*background-color: red;*/
-  /*display:none;*/
+  margin-top:6rem;
 
   @mixin atSmall {
     position:absolute;
@@ -55,6 +52,11 @@
     position: relative;
     opacity: 0.7;
     cursor: pointer;
+    display:none;
+
+    @mixin atSmall {
+      display:block;
+    }
 
     &:hover {
       opacity: 1;

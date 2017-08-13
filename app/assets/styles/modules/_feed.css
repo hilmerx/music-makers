@@ -1,14 +1,18 @@
 
 
 .feed {
+  text-align:left;
   height:100%;
   width: 100%;
   transition: all .3s ease-out;
   /*background-color: red;*/
   /*margin-top:3rem;*/
+  /*position: absolute;*/
+  top:0;
 
   @mixin atSmall {
     /*margin-top:0;*/
+    position: static;
 
     height: 21rem;
     width: 111rem;
@@ -19,12 +23,22 @@
 
   &__text {
     position: absolute;
-    background-color: rgba(116 ,116 ,116, 0.6);
-    font-size: 0.875rem;
-    color: #eaeaea;
+    background-color: rgba(200 ,200 ,200, 0.8);
+    font-size: 1.275rem;
+    color: rgba(51 ,51 ,51, 1);
     padding: 0.15rem 0.25rem 0 0.25rem ;
     z-index:1;
     cursor: pointer;
+
+    @mixin atSmall {
+      position: absolute;
+      /*background-color: rgba(116 ,116 ,116, 0.6);*/
+      font-size: 0.875rem;
+      /*color: #eaeaea;*/
+      padding: 0.15rem 0.25rem 0 0.25rem ;
+      z-index:1;
+      cursor: pointer;
+    }
   }
 
   &__module {
@@ -220,8 +234,8 @@
 
       & img {
         position:relative;
-        left:0;
-        top:0;
+        left:0px;
+        top:0px;
       }
     }
 
@@ -462,6 +476,7 @@
       & img {
         @mixin atMobile{
           width: 100%;
+          left: 0;
         }
       }
     }

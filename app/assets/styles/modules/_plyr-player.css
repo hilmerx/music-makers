@@ -30,8 +30,11 @@
   /*top: 50%;*/
   /*transform: translateY(-50%);*/
   max-width: 100%;
+  /*max-height: 40%;*/
+  height: 40%;
   margin: 0 auto;
   text-align: center;
+  /*background-color: red;*/
 }
 
 .plyr,
@@ -351,6 +354,10 @@
 .plyr__play-large {
     background: transparent;
     color: #333;
+    visibility: hidden;
+    @mixin atSmall{
+      visibility: visible;
+    }
 }
 .plyr__play-large {
   cursor: pointer;
