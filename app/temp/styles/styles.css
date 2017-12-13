@@ -1694,7 +1694,7 @@ a {
 }
 
 .plyr__controls .plyr__volume {
-    margin-left: 5px
+    margin-left: 15px
 }
 
 .plyr__controls [data-plyr=pause] {
@@ -1795,8 +1795,7 @@ a {
   }
 
 .plyr__play-large {
-  cursor: pointer;
-
+    cursor: pointer;
     display: none;
     position: absolute;
     z-index: 1;
@@ -2272,6 +2271,7 @@ a {
 
 .modal__video-player {
     max-width: 100%;
+    z-index: 888;
   }
 
 .modal__x {

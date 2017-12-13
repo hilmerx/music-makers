@@ -10366,7 +10366,7 @@ var menu = new _Menu2.default();
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -10384,119 +10384,134 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var ModalPlayer = function () {
-  function ModalPlayer() {
-    _classCallCheck(this, ModalPlayer);
+    function ModalPlayer() {
+        _classCallCheck(this, ModalPlayer);
 
-    this.openModalButton = (0, _jquery2.default)(".feed__image");
-    this.modal = (0, _jquery2.default)(".modal");
-    this.modalBox = (0, _jquery2.default)(".modal__box");
-    this.closeModalButton = (0, _jquery2.default)(".modal__close");
-    this.events();
-  }
-
-  _createClass(ModalPlayer, [{
-    key: 'events',
-    value: function events() {
-      this.openModalButton.click(this.openModal.bind(this)).click(this.getMedia);
-
-      this.closeModalButton.click(this.closeModal.bind(this));
-
-      this.modalBox.click(function (e) {
-        e.stopPropagation();
-      });
-
-      this.modal.click(this.closeModal.bind(this));
-
-      (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
+        this.openModalButton = (0, _jquery2.default)(".feed__image");
+        this.modal = (0, _jquery2.default)(".modal");
+        this.modalBox = (0, _jquery2.default)(".modal__box");
+        this.closeModalButton = (0, _jquery2.default)(".modal__close");
+        this.videoWrapper;
+        this.events();
     }
-  }, {
-    key: 'keyPressHandler',
-    value: function keyPressHandler(e) {
-      if (e.keyCode === 27) {
-        this.closeModal();
-      }
-    }
-  }, {
-    key: 'blockClose',
-    value: function blockClose() {}
-  }, {
-    key: 'openModal',
-    value: function openModal() {
-      this.modal.addClass("modal--is-visible");
-      return false;
-    }
-  }, {
-    key: 'getMedia',
-    value: function getMedia() {
-      var moduleName = (0, _jquery2.default)(this).attr('id');
-      var player = [];
-      var source = [];
 
-      _jquery2.default.ajax({
-        type: 'GET',
-        dataType: 'json',
-        url: "assets/json/projects/" + moduleName + '.json'
-      }).done(function (data) {
+    _createClass(ModalPlayer, [{
+        key: 'events',
+        value: function events() {
+            this.openModalButton.click(this.openModal.bind(this)).click(this.getMedia);
 
-        (0, _jquery2.default)(".modal__title").html(data.title);
-        (0, _jquery2.default)(".modal__director").html(data.directorText);
+            this.closeModalButton.click(this.closeModal.bind(this));
 
-        data.movies.forEach(function (val, num) {
-          console.log(num);
-          if (data.movies.length === 2) {
-            (0, _jquery2.default)(".plyr__container").append('<video poster="" controls crossorigin class="modal__video-player"><source src="" type="video/mp4" class="modal__video-source"></video>');
-          } else {
-            (0, _jquery2.default)(".plyr__container").append('<video poster="" controls crossorigin class="modal__video-player"><source src="" type="video/mp4" class="modal__video-source"></video>');
-          }
+            this.modalBox.click(function (e) {
+                e.stopPropagation();
+            });
 
-          player[num] = (0, _jquery2.default)(".modal__video-player")[num];
-          source[num] = (0, _jquery2.default)(".modal__video-source")[num];
-        });
+            this.modal.click(this.closeModal.bind(this));
 
-        var instances = _plyr2.default.setup({
-          // autoplay: true,
-          // debug: true
-        });
-
-        source.forEach(function (instance, num) {
-          instance.setAttribute('src', data.movies[num]);
-        });
-
-        if (player.length === 1) {
-          (0, _jquery2.default)('.plyr').css("display", "block").css("max-width", "100%");
-        } else if (player.length === 2) {
-          (0, _jquery2.default)('.plyr').css("display", "inline-block").css("max-width", "50%");
-        } else {
-          (0, _jquery2.default)('.plyr').css("display", "inline-block").css("max-width", "50%");
+            (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
         }
-
-        player.forEach(function (instance) {
-          instance.load();
-        });
-
-        (0, _jquery2.default)(".modal__descripitive-text").html(data.text);
-      }).done(function () {
-        if (player.length === 1) {
-          player.forEach(function (instance) {
-            // instance.play();
-          });
+    }, {
+        key: 'keyPressHandler',
+        value: function keyPressHandler(e) {
+            if (e.keyCode === 27) {
+                this.closeModal();
+            }
         }
-      });
-    }
-  }, {
-    key: 'closeModal',
-    value: function closeModal() {
-      var players = [];
+    }, {
+        key: 'blockClose',
+        value: function blockClose() {}
+    }, {
+        key: 'openModal',
+        value: function openModal() {
+            this.modal.addClass("modal--is-visible");
+            return false;
+        }
+    }, {
+        key: 'getMedia',
+        value: function getMedia() {
+            var moduleName = (0, _jquery2.default)(this).attr('id');
+            var player = [];
+            var source = [];
 
-      this.modal.removeClass("modal--is-visible");
+            _jquery2.default.ajax({
+                type: 'GET',
+                dataType: 'json',
+                url: "assets/json/projects/" + moduleName + '.json'
+            }).done(function (data) {
 
-      (0, _jquery2.default)(".plyr__container").html("");
+                (0, _jquery2.default)(".modal__title").html(data.title);
+                (0, _jquery2.default)(".modal__director").html(data.directorText);
 
-      return false;
-    }
-  }]);
+                data.movies.forEach(function (val, num) {
 
-  return ModalPlayer;
+                    if (data.movies.length === 2) {
+                        (0, _jquery2.default)(".plyr__container").append('<video poster="" controls crossorigin class="modal__video-player"><source src="" type="video/mp4" class="modal__video-source"></video>');
+                    } else {
+                        (0, _jquery2.default)(".plyr__container").append('<video poster="" controls crossorigin class="modal__video-player"><source src="" type="video/mp4" class="modal__video-source"></video>');
+                    }
+
+                    player[num] = (0, _jquery2.default)(".modal__video-player")[num];
+                    source[num] = (0, _jquery2.default)(".modal__video-source")[num];
+                });
+
+                var instances = _plyr2.default.setup({
+                    // autoplay: true,
+                    // debug: true
+                });
+
+                source.forEach(function (instance, num) {
+                    instance.setAttribute('src', data.movies[num]);
+                });
+
+                if (player.length === 1) {
+                    (0, _jquery2.default)('.plyr').css("display", "block").css("max-width", "100%");
+                } else if (player.length === 2) {
+                    (0, _jquery2.default)('.plyr').css("display", "inline-block").css("max-width", "50%");
+                } else {
+                    (0, _jquery2.default)('.plyr').css("display", "inline-block").css("max-width", "50%");
+                }
+
+                player.forEach(function (instance) {
+                    instance.load();
+                });
+
+                (0, _jquery2.default)(".modal__descripitive-text").html(data.text);
+            }).done(function () {
+                var instances = _plyr2.default.get();
+
+                var divs = (0, _jquery2.default)(".modal__video-player");
+
+                var _loop = function _loop(x) {
+                    var instance = instances[x];
+                    var activeDiv = divs[x];
+                    activeDiv.addEventListener('click', function () {
+                        if (!instance.isPaused()) {
+                            setTimeout(function () {
+                                instance.pause();
+                            }, 50);
+                        }
+                    });
+                };
+
+                for (var x = 0; x < instances.length; x++) {
+                    _loop(x);
+                }
+            });
+        }
+    }, {
+        key: 'closeModal',
+        value: function closeModal() {
+            var players = [];
+
+            this.modal.removeClass("modal--is-visible");
+
+            (0, _jquery2.default)(".plyr__container").html("");
+
+            return false;
+        }
+    }]);
+
+    return ModalPlayer;
 }();
 
 exports.default = ModalPlayer;

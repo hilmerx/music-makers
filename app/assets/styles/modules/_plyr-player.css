@@ -271,7 +271,7 @@
     margin-left: 0
 }
 .plyr__controls .plyr__volume {
-    margin-left: 5px
+    margin-left: 15px
 }
 .plyr__controls [data-plyr=pause] {
     margin-left: 0
@@ -351,8 +351,7 @@
     }
 }
 .plyr__play-large {
-  cursor: pointer;
-
+    cursor: pointer;
     display: none;
     position: absolute;
     z-index: 1;

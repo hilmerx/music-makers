@@ -53,6 +53,7 @@
 
   &__video-player {
     max-width: 100%;
+    z-index: 888;
   }
 
   &__x {
