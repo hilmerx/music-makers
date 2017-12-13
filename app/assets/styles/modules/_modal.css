@@ -61,17 +61,13 @@
     background-color: transparent;
     color: $mainWhite;
     position:absolute;
-    /*border-radius: 50%;*/
     text-align:center;
     right: 1.7rem;
     top: 1.4rem;
     cursor:pointer;
-    /*border: 0.1rem solid $mainBlack;*/
 
     & img {
       position:relative;
-      /*top: 50%;
-      transform:translateY(-50%);*/
       width:100%;
     }
 

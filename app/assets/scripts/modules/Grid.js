@@ -10,7 +10,8 @@ class Grid {
   }
 
   getGrid(){
-    let gridList
+    let gridCommercials
+    let gridFilms
     let title
     let filename
 
@@ -19,34 +20,50 @@ class Grid {
     dataType: 'json',
     url:"assets/json/grid-list.json",
   }).then( (data) => {
-      gridList = data.list
+      gridCommercials = data.gridCommercials
+      gridFilms = data.gridFilms
     })
     .then( ()=>{
-      gridList.forEach(function(elm, moduleNr) {
-
-
+      gridCommercials.forEach(function(elm, moduleNr) {
         $.ajax({
         type: 'GET',
         dataType: 'json',
-        url:"assets/json/projects/"+gridList[moduleNr]+".json",
+        url:"assets/json/projects/"+gridCommercials[moduleNr]+".json",
         })
         .then( (data) => {
-          filename = gridList[moduleNr]
+          filename = gridCommercials[moduleNr]
           title = data.title
-          $('#'+(moduleNr+1)+' .feed__image').attr('id', filename)
-          $('#'+(moduleNr+1)+' .feed__text').html(title)
+          $('.commercials #'+(moduleNr+1)+' .feed__image').attr('id', filename)
+          $('.commercials #'+(moduleNr+1)+' .feed__text').html(title)
 
           if (moduleNr === 0){
-            $('#'+(moduleNr+1)+' img').attr('srcset', "assets/images/thumbnails/"+filename+"-large-hi-dpi.jpg 310w, assets/images/thumbnails/"+filename+"-large.jpg 155w")
+            $('.commercials #'+(moduleNr+1)+' img').attr('srcset', "assets/images/thumbnails/"+filename+"-large-hi-dpi.jpg 310w, assets/images/thumbnails/"+filename+"-large.jpg 155w")
           } else {
-            $('#'+(moduleNr+1)+' img').attr('srcset', "assets/images/thumbnails/"+filename+"-hi-dpi.jpg 318w, assets/images/thumbnails/"+filename+".jpg 159w")
+            $('.commercials #'+(moduleNr+1)+' img').attr('srcset', "assets/images/thumbnails/"+filename+"-hi-dpi.jpg 318w, assets/images/thumbnails/"+filename+".jpg 159w")
           }
-          $('#'+(moduleNr+1)+' img').attr('alt', title)
-
+          $('.commercials #'+(moduleNr+1)+' img').attr('alt', title)
         })
-
-
       })
+
+      gridFilms.forEach(function(elm, moduleNr) {
+        $.ajax({
+        type: 'GET',
+        dataType: 'json',
+        url:"assets/json/projects/"+gridFilms[moduleNr]+".json",
+        })
+        .then( (data) => {
+          filename = gridFilms[moduleNr]
+          title = data.title
+          $('.films #'+(moduleNr+1)+' .feed__image').attr('id', filename)
+          $('.films #'+(moduleNr+1)+' .feed__text').html(title)
+
+          $('.films #'+(moduleNr+1)+' img').attr('srcset', "assets/images/thumbnails/"+filename+"-hi-dpi.jpg 1000w, assets/images/thumbnails/"+filename+".jpg 500w")
+
+          $('.films #'+(moduleNr+1)+' img').attr('alt', title)
+        })
+      })
+
+
     })
   }
 }

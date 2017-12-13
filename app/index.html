@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
   <head>
     <title>MUSIC MAKERS - Music Production Stockholm, Sweden</title>
@@ -8,29 +8,44 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
-
-
-    <link href="favico.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="assets/images/favico.ico" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="temp/styles/styles.css">
-    <!-- <link rel="stylesheet" href="https://cdn.plyr.io/2.0.13/plyr.css"> -->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-41505850-1', 'musicmakers.se');
+      ga('send', 'pageview');
+    </script>
 
   </head>
   <body>
+
+    <div class="menu-modal menu-modal--close">
+      <div class="menu-modal__box">
+        <div class="menu-modal__text-container">
+          <div class="menu-modal__text menu-modal__text--commercials menu-modal__text menu-modal__text--is-active" data-connectedDiv=".commercials"><span>Commercials.</span></div>
+          <div class="menu-modal__text menu-modal__text--films" data-connectedDiv=".films"><span>Films.</span></div>
+          <div class="menu-modal__text menu-modal__text--about" data-connectedDiv=".about"><span>About.</span></div>
+          <div class="menu-modal__text menu-modal__text--contact" data-connectedDiv=".contact"><span>Contact.</span></div>
+        </div>
+      </div>
+    </div>
     <div class="modal modal__close">
       <div class="modal__box">
         <p class="modal__title modal__title-text"></p>
         <p class="modal__director modal__title-text"></p>
 
         <div class="plyr__container">
-          <!-- <video poster="" controls crossorigin class="modal__video-player">
-            <source src="" type="video/mp4" class="modal__video-source">
-          </video> -->
         </div>
 
         </p>
         <p class="modal__descripitive-text"></p>
         <div class="modal__x modal__close">
-          <img src="assets/images/icons/close-icon.png" alt="Close Icon">
+          <img src="assets/images/close-icon.png" alt="Close Icon">
         </div>
       </div>
     </div>
@@ -39,289 +54,360 @@
       <div class="backbone__logo">
         <img srcset="assets/images/logo.png 322w, assets/images/logo-hi-dpi.png 644w" sizes="322px" alt="Music Makers">
       </div>
-      <div class="site-header__menu-icon">
-        <div class="site-header__menu-icon__middle"></div>
+      <div class="backbone__menu-icon menu-modal--close">
+        <div class="backbone__menu-icon__middle"></div>
       </div>
 
       <div class="backbone__cloud">
         <div class="content-area">
           <div class="content-area__menu">
-            <span class="content-area__menu-left">Commercials / Film</span>
-            <span class="content-area__menu-right">About / Contact</span>
+            <span class="content-area__menu-left">
+              <span class="content-area__menu--commercials menu-modal__text--is-active" data-connectedDiv=".commercials">Commercials</span> /
+              <span class="content-area__menu--films" data-connectedDiv=".films">Film</span>
+            </span>
+            <span class="content-area__menu-right">
+              <span class="content-area__menu--about" data-connectedDiv=".about">About</span> /
+              <span class="content-area__menu--contact" data-connectedDiv=".contact">Contact</span>
+            </span>
           </div>
-          <div class="feed feed--1" id="feed__selector" data-page="1">
-            <div class="feed__page feed__page--1">
-              <div class="feed__module feed__module--height-of-two" id="1">
-                <div class="feed__image">
-                  <div class="feed__image--1-1-1 feed__image--mobile">
-                    <div class="feed__text">
+          <div class="commercials content-area--is-visible">
+            <div class="feed feed--1" id="feed__selector" data-page="1">
+              <div class="feed__page feed__page--1">
+                <div class="feed__module feed__module--height-of-two" id="1">
+                  <div class="feed__image">
+                    <div class="feed__image--1-1-1 feed__image--mobile">
+                      <div class="feed__text">
 
+                      </div>
+                      <img srcset="" sizes="155px" alt="">
                     </div>
-                    <img srcset="" sizes="155px" alt="">
+                  </div>
+                </div>
+                <div class="feed__module" id="2">
+                  <div class="feed__image feed__image--hor-center">
+                    <div class="feed__image--1-1-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="3">
+                  <div class="feed__image feed__image--hor-right">
+                    <div class="feed__image--1-1-3 feed__image--mobile">
+                      <div class="feed__text">
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="4">
+                  <div class="feed__image feed__image--vert-center feed__image--hor-center" id="">
+                    <div class="feed__image--1-2-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="5">
+                  <div class="feed__image feed__image--vert-center feed__image--hor-right" id="">
+                    <div class="feed__image--1-2-3 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="6">
+                  <div class="feed__image feed__image--vert-bottom" id="">
+                    <div class="feed__image--1-3-1 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="7">
+                  <div class="feed__image feed__image--vert-bottom feed__image--hor-center" id="">
+                    <div class="feed__image--1-3-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="8">
+                  <div class="feed__image feed__image--vert-bottom feed__image--hor-right" id="">
+                    <div class="feed__image--1-3-3 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="feed__module" id="2">
-                <div class="feed__image feed__image--hor-center">
-                  <div class="feed__image--1-1-2 feed__image--mobile">
-                    <div class="feed__text">
+              <div class="feed__page feed__page--2">
+                <div class="feed__module" id="9">
+                  <div class="feed__image">
+                    <div class="feed__image--2-1-1 feed__image--mobile">
+                      <div class="feed__text">
 
+                      </div>
+                      <img srcset="" sizes="155px" alt="">
                     </div>
-                    <img srcset="" sizes="159px" alt="">
+                  </div>
+                </div>
+                <div class="feed__module" id="10">
+                  <div class="feed__image feed__image--hor-center">
+                    <div class="feed__image--2-1-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="11">
+                  <div class="feed__image feed__image--hor-right">
+                    <div class="feed__image--2-1-3 feed__image--mobile">
+                      <div class="feed__text">
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="12">
+                  <div class="feed__image feed__image--vert-center" id="">
+                    <div class="feed__image--2-2-1 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="feed__module" id="13">
+                  <div class="feed__image feed__image--vert-center feed__image--hor-center" id="">
+                    <div class="feed__image--2-2-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="14">
+                  <div class="feed__image feed__image--vert-center feed__image--hor-right" id="">
+                    <div class="feed__image--2-2-3 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="15">
+                  <div class="feed__image feed__image--vert-bottom" id="">
+                    <div class="feed__image--2-3-1 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="16">
+                  <div class="feed__image feed__image--vert-bottom feed__image--hor-center" id="">
+                    <div class="feed__image--2-3-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="17">
+                  <div class="feed__image feed__image--vert-bottom feed__image--hor-right" id="">
+                    <div class="feed__image--2-3-3 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="feed__module" id="3">
-                <div class="feed__image feed__image--hor-right">
-                  <div class="feed__image--1-1-3 feed__image--mobile">
-                    <div class="feed__text">
+
+              <div class="feed__page feed__page--3">
+                <div class="feed__module" id="18">
+                  <div class="feed__image">
+                    <div class="feed__image--3-1-1 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="155px" alt="">
                     </div>
-                    <img srcset="" sizes="159px" alt="">
+                  </div>
+                </div>
+                <div class="feed__module" id="19">
+                  <div class="feed__image feed__image--hor-center">
+                    <div class="feed__image--3-1-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="20">
+                  <div class="feed__image feed__image--hor-right">
+                    <div class="feed__image--3-1-3 feed__image--mobile">
+                      <div class="feed__text">
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="21">
+                  <div class="feed__image feed__image--vert-center" id="">
+                    <div class="feed__image--3-2-1 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="feed__module" id="22">
+                  <div class="feed__image feed__image--vert-center feed__image--hor-center" id="">
+                    <div class="feed__image--3-2-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="23">
+                  <div class="feed__image feed__image--vert-center feed__image--hor-right" id="">
+                    <div class="feed__image--3-2-3 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="24">
+                  <div class="feed__image feed__image--vert-bottom" id="">
+                    <div class="feed__image--3-3-1 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="25">
+                  <div class="feed__image feed__image--vert-bottom feed__image--hor-center" id="">
+                    <div class="feed__image--3-3-2 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="feed__module" id="26">
+                  <div class="feed__image feed__image--vert-bottom feed__image--hor-right" id="">
+                    <div class="feed__image--3-3-3 feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="159px" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="feed__module" id="4">
-                <div class="feed__image feed__image--vert-center feed__image--hor-center" id="">
-                  <div class="feed__image--1-2-2 feed__image--mobile">
-                    <div class="feed__text">
 
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
+            </div>
+            <div class="content-area__arrow">
+              <div class="content-area__arrow--prev">
+                <img src="assets/images/prev.png" sizes="" alt="Previous">
               </div>
-              <div class="feed__module" id="5">
-                <div class="feed__image feed__image--vert-center feed__image--hor-right" id="">
-                  <div class="feed__image--1-2-3 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="6">
-                <div class="feed__image feed__image--vert-bottom" id="">
-                  <div class="feed__image--1-3-1 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="7">
-                <div class="feed__image feed__image--vert-bottom feed__image--hor-center" id="">
-                  <div class="feed__image--1-3-2 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="8">
-                <div class="feed__image feed__image--vert-bottom feed__image--hor-right" id="">
-                  <div class="feed__image--1-3-3 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
+              <div class="content-area__arrow--next">
+                <img src="assets/images/next.png" sizes="" alt="Next">
               </div>
             </div>
-            <div class="feed__page feed__page--2">
-              <div class="feed__module" id="9">
-                <div class="feed__image--2-1-1 feed__image--mobile">
-                  <div class="feed__text">
+          </div>
 
-                  </div>
-                  <img srcset="" sizes="155px" alt="">
-                </div>
-              </div>
-              <div class="feed__module" id="10">
-                <div class="feed__image feed__image--hor-center">
-                  <div class="feed__image--2-1-2 feed__image--mobile">
-                    <div class="feed__text">
+          <div class="films">
+            <div class="feed feed--1">
+              <div class="feed__page feed__page--1">
+                <div class="feed__module feed__module--film-page" id="1">
+                  <div class="feed__image">
+                    <div class="feed__image--film-L feed__image--mobile">
+                      <div class="feed__text">
 
+                      </div>
+                      <img srcset="" sizes="250px" alt="">
                     </div>
-                    <img srcset="" sizes="159px" alt="">
                   </div>
                 </div>
-              </div>
-              <div class="feed__module" id="11">
-                <div class="feed__image feed__image--hor-right">
-                  <div class="feed__image--2-1-3 feed__image--mobile">
-                    <div class="feed__text">
+                <div class="feed__module feed__module--film-page" id="2">
+                  <div class="feed__image">
+                    <div class="feed__image--film-R feed__image--mobile">
+                      <div class="feed__text">
+
+                      </div>
+                      <img srcset="" sizes="250px" alt="">
                     </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="12">
-                <div class="feed__image feed__image--vert-center" id="">
-                  <div class="feed__image--2-2-1 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-
-              <div class="feed__module" id="13">
-                <div class="feed__image feed__image--vert-center feed__image--hor-center" id="">
-                  <div class="feed__image--2-2-2 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="14">
-                <div class="feed__image feed__image--vert-center feed__image--hor-right" id="">
-                  <div class="feed__image--2-2-3 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="15">
-                <div class="feed__image feed__image--vert-bottom" id="">
-                  <div class="feed__image--2-3-1 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="16">
-                <div class="feed__image feed__image--vert-bottom feed__image--hor-center" id="">
-                  <div class="feed__image--2-3-2 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="17">
-                <div class="feed__image feed__image--vert-bottom feed__image--hor-right" id="">
-                  <div class="feed__image--2-3-3 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="feed__page feed__page--3">
-              <div class="feed__module" id="18">
-                <div class="feed__image feed__image--mobile">
-                  <div class="feed__text">
-
-                  </div>
-                  <img srcset="" sizes="155px" alt="">
-                </div>
-              </div>
-              <div class="feed__module" id="19">
-                <div class="feed__image feed__image--hor-center">
-                  <div class="feed__image--3-1-2 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="20">
-                <div class="feed__image feed__image--hor-right">
-                  <div class="feed__image--3-1-3 feed__image--mobile">
-                    <div class="feed__text">
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="21">
-                <div class="feed__image feed__image--vert-center" id="">
-                  <div class="feed__image--3-2-1 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-
-              <div class="feed__module" id="22">
-                <div class="feed__image feed__image--vert-center feed__image--hor-center" id="">
-                  <div class="feed__image--3-2-2 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="23">
-                <div class="feed__image feed__image--vert-center feed__image--hor-right" id="">
-                  <div class="feed__image--3-2-3 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="24">
-                <div class="feed__image feed__image--vert-bottom" id="">
-                  <div class="feed__image--3-3-1 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="25">
-                <div class="feed__image feed__image--vert-bottom feed__image--hor-center" id="">
-                  <div class="feed__image--3-3-2 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="feed__module" id="26">
-                <div class="feed__image feed__image--vert-bottom feed__image--hor-right" id="">
-                  <div class="feed__image--3-3-3 feed__image--mobile">
-                    <div class="feed__text">
-
-                    </div>
-                    <img srcset="" sizes="159px" alt="">
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="content-area__arrow">
-            <div class="content-area__arrow--prev">
-              <img src="assets/images/prev.png" sizes="" alt="Previous">
+          <div class="about">
+            <p>We are a music production agency based in Stockholm, Sweden. We produce and write original music and sound-alikes for film, tv, advertising and games. We also consult in matters of music supervision.</p>
+
+            <p>No matter if it's orchestral music or a marriachi band, we love to produce it and we have access to both digital or analog solutions in our mastering grade sound studio.</p>
+
+            <p>We also work with orchestral software for film scoring, a large collection of instruments from all around the world and luckily for us, the best musicians in Scandinavia.</p>
+
+            <p>In short, we want our clients to sound great!</p>
+          </div>
+
+          <div class="contact">
+            <div class="contact__image">
+              <img src="assets/images/profil.png" sizes="" alt="Picture of us">
             </div>
-            <div class="content-area__arrow--next">
-              <img src="assets/images/next.png" sizes="" alt="Next">
+            <div class="contact__text">
+              <p>For productions or chit chat!</p>
+
+              <p><strong>Joel Hilme</strong><br />
+              <a href="tel:+46706807763">+46 (0)70 68 077 63</a><br />
+              <a href="mailto:joel@musicmaker.se">joel@musicmakers.se</a></p>
+              <p><strong>Felix Martinz</strong><br />
+              <a href="tel:+46705878988">+46 (0)70 58 789 88</a><br />
+              <a href="mailto:felix@musicmaker.se">felix@musicmakers.se</a></p>
+              <p>Music Makers<br />
+              Brännkyrkagatan 50A<br />
+              118 22 Stockholm</p>
             </div>
           </div>
+
+
+
         </div>
         <img class="backbone__cloud--mobile-top" srcset="assets/images/moln.jpg 952w, assets/images/moln-hi-dpi.jpg 1904w" sizes="952px" width="1000px" alt="Cloud">
         <img class="backbone__cloud--mobile-bottom" srcset="assets/images/moln.jpg 952w, assets/images/moln-hi-dpi.jpg 1904w" sizes="952px" width="1000px" alt="Cloud">
@@ -329,7 +415,7 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="/temp/scripts/App.js"></script>
+    <script type="text/javascript" src="temp/scripts/App.js"></script>
 
   </body>
 </html>

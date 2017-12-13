@@ -9,24 +9,16 @@ class Plyr {
   }
 
   events() {
-    // console.log($('.modal__close'))
 
     this.plyrPlayer()
-    // this.closeModalButton()
+  
   }
 
 
 
   plyrPlayer(){
-      // This is the bare minimum JavaScript. You can opt to pass no arguments to setup.
-      // e.g. just plyr.setup(); and leave it at that if you have no need for events
-    var instances = plyr.setup({
-      // autoplay: true,
-      // debug: true
-    });
-
+    var instances = plyr.setup({});
   }
 
-  }
+}
 
-// export default Plyr

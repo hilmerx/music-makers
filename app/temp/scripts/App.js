@@ -10335,9 +10335,9 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _Modal = __webpack_require__(2);
+var _ModalPlayer = __webpack_require__(2);
 
-var _Modal2 = _interopRequireDefault(_Modal);
+var _ModalPlayer2 = _interopRequireDefault(_ModalPlayer);
 
 var _Grid = __webpack_require__(4);
 
@@ -10347,32 +10347,16 @@ var _Nav = __webpack_require__(5);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
+var _Menu = __webpack_require__(6);
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import Plyr from './modules/Plyr.js'
-
-/*let Person = require('./modules/Person')
-
-import Person from './modules/Person'
-
-class Adult extends Person {
-  payTaxes(){
-    console.log(this.name + " payed taxes")
-  }
-}
-
-let joel = new Person("Joel", "korv")
-let michelle = new Adult("Michelle", "kimchi")
-
-joel.greet()
-michelle.greet()
-michelle.payTaxes()
-*/
 
 var grid = new _Grid2.default();
 var nav = new _Nav2.default();
-var modal = new _Modal2.default();
-// let plyr = new Plyr()
+var modalPlayer = new _ModalPlayer2.default();
+var menu = new _Menu2.default();
 
 /***/ }),
 /* 2 */
@@ -10399,9 +10383,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Modal = function () {
-  function Modal() {
-    _classCallCheck(this, Modal);
+var ModalPlayer = function () {
+  function ModalPlayer() {
+    _classCallCheck(this, ModalPlayer);
 
     this.openModalButton = (0, _jquery2.default)(".feed__image");
     this.modal = (0, _jquery2.default)(".modal");
@@ -10410,7 +10394,7 @@ var Modal = function () {
     this.events();
   }
 
-  _createClass(Modal, [{
+  _createClass(ModalPlayer, [{
     key: 'events',
     value: function events() {
       this.openModalButton.click(this.openModal.bind(this)).click(this.getMedia);
@@ -10512,10 +10496,10 @@ var Modal = function () {
     }
   }]);
 
-  return Modal;
+  return ModalPlayer;
 }();
 
-exports.default = Modal;
+exports.default = ModalPlayer;
 
 /***/ }),
 /* 3 */
@@ -14336,7 +14320,8 @@ var Grid = function () {
   }, {
     key: 'getGrid',
     value: function getGrid() {
-      var gridList = void 0;
+      var gridCommercials = void 0;
+      var gridFilms = void 0;
       var title = void 0;
       var filename = void 0;
 
@@ -14345,26 +14330,43 @@ var Grid = function () {
         dataType: 'json',
         url: "assets/json/grid-list.json"
       }).then(function (data) {
-        gridList = data.list;
+        gridCommercials = data.gridCommercials;
+        gridFilms = data.gridFilms;
       }).then(function () {
-        gridList.forEach(function (elm, moduleNr) {
-
+        gridCommercials.forEach(function (elm, moduleNr) {
           _jquery2.default.ajax({
             type: 'GET',
             dataType: 'json',
-            url: "assets/json/projects/" + gridList[moduleNr] + ".json"
+            url: "assets/json/projects/" + gridCommercials[moduleNr] + ".json"
           }).then(function (data) {
-            filename = gridList[moduleNr];
+            filename = gridCommercials[moduleNr];
             title = data.title;
-            (0, _jquery2.default)('#' + (moduleNr + 1) + ' .feed__image').attr('id', filename);
-            (0, _jquery2.default)('#' + (moduleNr + 1) + ' .feed__text').html(title);
+            (0, _jquery2.default)('.commercials #' + (moduleNr + 1) + ' .feed__image').attr('id', filename);
+            (0, _jquery2.default)('.commercials #' + (moduleNr + 1) + ' .feed__text').html(title);
 
             if (moduleNr === 0) {
-              (0, _jquery2.default)('#' + (moduleNr + 1) + ' img').attr('srcset', "assets/images/thumbnails/" + filename + "-large-hi-dpi.jpg 310w, assets/images/thumbnails/" + filename + "-large.jpg 155w");
+              (0, _jquery2.default)('.commercials #' + (moduleNr + 1) + ' img').attr('srcset', "assets/images/thumbnails/" + filename + "-large-hi-dpi.jpg 310w, assets/images/thumbnails/" + filename + "-large.jpg 155w");
             } else {
-              (0, _jquery2.default)('#' + (moduleNr + 1) + ' img').attr('srcset', "assets/images/thumbnails/" + filename + "-hi-dpi.jpg 318w, assets/images/thumbnails/" + filename + ".jpg 159w");
+              (0, _jquery2.default)('.commercials #' + (moduleNr + 1) + ' img').attr('srcset', "assets/images/thumbnails/" + filename + "-hi-dpi.jpg 318w, assets/images/thumbnails/" + filename + ".jpg 159w");
             }
-            (0, _jquery2.default)('#' + (moduleNr + 1) + ' img').attr('alt', title);
+            (0, _jquery2.default)('.commercials #' + (moduleNr + 1) + ' img').attr('alt', title);
+          });
+        });
+
+        gridFilms.forEach(function (elm, moduleNr) {
+          _jquery2.default.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: "assets/json/projects/" + gridFilms[moduleNr] + ".json"
+          }).then(function (data) {
+            filename = gridFilms[moduleNr];
+            title = data.title;
+            (0, _jquery2.default)('.films #' + (moduleNr + 1) + ' .feed__image').attr('id', filename);
+            (0, _jquery2.default)('.films #' + (moduleNr + 1) + ' .feed__text').html(title);
+
+            (0, _jquery2.default)('.films #' + (moduleNr + 1) + ' img').attr('srcset', "assets/images/thumbnails/" + filename + "-hi-dpi.jpg 1000w, assets/images/thumbnails/" + filename + ".jpg 500w");
+
+            (0, _jquery2.default)('.films #' + (moduleNr + 1) + ' img').attr('alt', title);
           });
         });
       });
@@ -14438,7 +14440,6 @@ var Nav = function () {
   }, {
     key: "nextPage",
     value: function nextPage() {
-      // console.log("next")
       var page = Number((0, _jquery2.default)(this.feed).attr('data-page'));
 
       if (page === 1) {
@@ -14463,7 +14464,6 @@ var Nav = function () {
   }, {
     key: "prevPage",
     value: function prevPage() {
-      // console.log("prev")
 
       var page = Number((0, _jquery2.default)(this.feed).attr('data-page'));
 
@@ -14492,6 +14492,161 @@ var Nav = function () {
 }();
 
 exports.default = Nav;
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Menu = function () {
+  function Menu() {
+    _classCallCheck(this, Menu);
+
+    this.toggleMenuButtons = (0, _jquery2.default)(".menu-modal--close");
+    this.menuIcon = (0, _jquery2.default)(".backbone__menu-icon");
+    this.menuModal = (0, _jquery2.default)(".menu-modal");
+    this.modalBox = (0, _jquery2.default)(".menu-modal__box");
+
+    this.logoButton = (0, _jquery2.default)(".backbone__logo");
+
+    this.commercialsButtonDesktop = (0, _jquery2.default)(".content-area__menu--commercials");
+    this.filmsButtonDesktop = (0, _jquery2.default)(".content-area__menu--films");
+    this.aboutButtonDesktop = (0, _jquery2.default)(".content-area__menu--about");
+    this.studioButtonDesktop = (0, _jquery2.default)(".content-area__menu--studio");
+    this.contactButtonDesktop = (0, _jquery2.default)(".content-area__menu--contact");
+
+    this.commercialsButton = (0, _jquery2.default)(".menu-modal__text--commercials");
+    this.filmsButton = (0, _jquery2.default)(".menu-modal__text--films");
+    this.aboutButton = (0, _jquery2.default)(".menu-modal__text--about");
+    this.studioButton = (0, _jquery2.default)(".menu-modal__text--studio");
+    this.contactButton = (0, _jquery2.default)(".menu-modal__text--contact");
+
+    this.commercialsDiv = (0, _jquery2.default)(".commercials");
+    this.filmsDiv = (0, _jquery2.default)(".films");
+    this.studioDiv = (0, _jquery2.default)(".studio");
+    this.aboutDiv = (0, _jquery2.default)(".about");
+    this.contactDiv = (0, _jquery2.default)(".contact");
+
+    this.currentMenuElementDesktop = this.commercialsButtonDesktop;
+    this.currentMenuElement = this.commercialsButton;
+    this.currentActiveDiv = this.commercialsDiv;
+
+    this.events();
+  }
+
+  _createClass(Menu, [{
+    key: "events",
+    value: function events() {
+
+      this.toggleMenuButtons.unbind('click').click(function () {
+        this.toggleMenu();
+      }.bind(this));
+
+      //Desktop events
+      this.commercialsButtonDesktop.click(function () {
+        this.openPageModal(this.commercialsButtonDesktop);
+      }.bind(this));
+
+      this.filmsButtonDesktop.click(function () {
+        this.openPageModal(this.filmsButtonDesktop);
+      }.bind(this));
+
+      this.studioButtonDesktop.click(function () {
+        this.openPageModal("studio");
+      }.bind(this));
+
+      this.aboutButtonDesktop.click(function () {
+        this.openPageModal(this.aboutButtonDesktop);
+      }.bind(this));
+
+      this.contactButtonDesktop.click(function () {
+        this.openPageModal(this.contactButtonDesktop);
+      }.bind(this));
+
+      //Modal events
+      this.logoButton.click(function () {
+        this.openPageModal(this.commercialsButton);
+      }.bind(this));
+
+      this.commercialsButton.click(function () {
+        this.openPageModal(this.commercialsButton);
+        this.toggleMenu();
+      }.bind(this));
+
+      this.filmsButton.click(function () {
+        this.openPageModal(this.filmsButton);
+        this.toggleMenu();
+      }.bind(this));
+
+      this.studioButton.click(function () {
+        this.openPageModal("studio");
+        this.toggleMenu();
+      }.bind(this));
+
+      this.aboutButton.click(function () {
+        this.openPageModal(this.aboutButton);
+        this.toggleMenu();
+      }.bind(this));
+
+      this.contactButton.click(function () {
+        this.openPageModal(this.contactButton);
+        this.toggleMenu();
+      }.bind(this));
+
+      this.modalBox.click(function (e) {
+        e.stopPropagation();
+      });
+    }
+  }, {
+    key: "toggleMenu",
+    value: function toggleMenu() {
+      this.menuIcon.toggleClass('backbone__menu-icon--close-x');
+      this.menuModal.toggleClass('menu-modal--is-visible');
+    }
+  }, {
+    key: "openPageModal",
+    value: function openPageModal(element) {
+      var connectedDivName = void 0;
+      var connectedDiv = void 0;
+      //changes the underline
+      this.currentMenuElement.removeClass("menu-modal__text--is-active");
+      this.currentMenuElementDesktop.removeClass("menu-modal__text--is-active");
+      element.addClass("menu-modal__text--is-active");
+      this.currentMenuElement = element;
+
+      //changes the div
+
+      this.currentActiveDiv.removeClass("content-area--is-visible");
+
+      //gets connected Div tag from menu
+      connectedDivName = element.attr('data-connectedDiv');
+      connectedDiv = (0, _jquery2.default)(connectedDivName);
+
+      connectedDiv.addClass("content-area--is-visible");
+      this.currentActiveDiv = connectedDiv;
+    }
+  }]);
+
+  return Menu;
+}();
+
+exports.default = Menu;
 
 /***/ })
 /******/ ]);

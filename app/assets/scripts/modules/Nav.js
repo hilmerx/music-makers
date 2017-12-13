@@ -38,7 +38,6 @@ class Nav {
 
 
   nextPage() {
-    // console.log("next")
     let page = Number($(this.feed).attr('data-page'))
 
     if (page === 1) {
@@ -67,7 +66,6 @@ class Nav {
   }
 
   prevPage() {
-    // console.log("prev")
 
     let page = Number($(this.feed).attr('data-page'))
 

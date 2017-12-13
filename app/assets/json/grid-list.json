@@ -1,5 +1,5 @@
 {
-  "list":[
+  "gridCommercials":[
     "thrills",
     "teliasonera",
     "mcdonalds",
@@ -7,7 +7,7 @@
     "bonaqua",
     "ikano-bank",
     "gooh",
-    "aeg",
+    "aeg-care-label",
 
     "glitter",
     "noblesse",
@@ -27,7 +27,14 @@
     "electrolux",
     "h&m",
     "verbling",
-    "absolut-vodka"
+    "aeg-next-black"
 
+  ],
+  "old projects":[
+    "absolut-vodka"
+  ],
+  "gridFilms": [
+    "feel-the-beat",
+    "presspauseplay"
   ]
 }

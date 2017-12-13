@@ -2,18 +2,13 @@
 
 .feed {
   text-align:left;
-  height:100%;
   width: 100%;
   transition: all .3s ease-out;
-  /*background-color: red;*/
-  /*margin-top:3rem;*/
-  /*position: absolute;*/
+  margin-top:0.5rem;
   top:0;
-
   @mixin atSmall {
-    /*margin-top:0;*/
+    height:100%;
     position: static;
-
     height: 21rem;
     width: 111rem;
     transition: all .3s ease-out;
@@ -32,9 +27,7 @@
 
     @mixin atSmall {
       position: absolute;
-      /*background-color: rgba(116 ,116 ,116, 0.6);*/
       font-size: 0.875rem;
-      /*color: #eaeaea;*/
       padding: 0.15rem 0.25rem 0 0.25rem ;
       z-index:1;
       cursor: pointer;
@@ -46,7 +39,6 @@
     width: 100%;
     height: 7rem;
     position:relative;
-    /*border: 1px solid black;*/
     overflow: hidden;
     margin-bottom: 1rem;
 
@@ -61,13 +53,23 @@
 
 
     &--height-of-two {
-      /*height: 4rem;*/
 
       @mixin atSmall {
         height: 66%;
       }
 
+
     }
+
+    &--film-page {
+
+      @mixin atSmall {
+        height: 100%;
+        width: 50%;
+
+      }
+    }
+
     &:after {
       @mixin: clearfix;
     }
@@ -110,7 +112,6 @@
     }
 
     &--hor-center {
-      /*background-color:red;*/
       left: 0;
       right: 0;
       text-align:center;
@@ -119,15 +120,17 @@
   }
 
     &__image--1-1-1 {
+      position:absolute;
       overflow: hidden;
       width: 155px;
       height: 216px;
 
       @mixin atSmall {
+
       }
 
       & img {
-        position:relative;
+        position: relative;
         left:-3px;
         top:-100px;
 
@@ -151,7 +154,7 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:1;
         width: 100%;
 
         @mixin atSmall {
@@ -187,6 +190,7 @@
         position:relative;
         left:-6px;
         top:-3px;
+
       }
     }
 
@@ -199,7 +203,10 @@
       & img {
         position:relative;
         left:-6px;
-        top:-3px;
+        top:-50px;
+        @mixin atSmall {
+          top:-3px;
+        }
       }
     }
 
@@ -247,7 +254,11 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-70px;
+        @mixin atSmall {
+          top:0;
+        }
+
       }
     }
 
@@ -258,7 +269,11 @@
       & img {
         position:relative;
         left:-3px;
-        top:-1px;
+        top:-70px;
+        @mixin atSmall {
+          top:-1px;
+        }
+
       }
     }
 
@@ -318,7 +333,10 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-40px;
+        @mixin atSmall {
+          top:0;
+        }
       }
     }
 
@@ -342,7 +360,10 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-40px;
+        @mixin atSmall {
+          top:0;
+        }
       }
     }
 
@@ -354,7 +375,10 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-70px;
+        @mixin atSmall {
+          top:0;
+        }
       }
     }
 
@@ -366,7 +390,10 @@
       & img {
         position:relative;
         left:-3px;
-        top:-1px;
+        top:-80px;
+        @mixin atSmall {
+          top:-1px;
+        }
       }
     }
 
@@ -378,7 +405,10 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-50px;
+        @mixin atSmall {
+          top:0;
+        }
       }
     }
 
@@ -390,7 +420,10 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-60px;
+        @mixin atSmall {
+          top:0;
+        }
       }
     }
 
@@ -414,7 +447,10 @@
       & img {
         position:relative;
         left:-6px;
-        top:-3px;
+        top:-80px;
+        @mixin atSmall {
+          top:-3px;
+        }
       }
     }
 
@@ -426,7 +462,10 @@
       & img {
         position:relative;
         left:0;
-        top:-10px;
+        top:-80px;
+        @mixin atSmall {
+          top:-10px;
+        }
       }
     }
 
@@ -451,7 +490,10 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-80px;
+        @mixin atSmall {
+          top:0px;
+        }
       }
     }
 
@@ -463,13 +505,45 @@
       & img {
         position:relative;
         left:0;
-        top:0;
+        top:-100px;
+        @mixin atSmall {
+          top:0px;
+        }
+      }
+    }
+
+    &__image--film-L {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      & img {
+        position:relative;
+        left:0;
+        top:-10px;
+      }
+    }
+
+    &__image--film-R {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      & img {
+        position:relative;
+        left:0;
+        top:-320px;
+
+        @mixin atSmall {
+          top:0;
+
+        }
       }
     }
 
     &__image--mobile {
       @mixin atMobile{
-        height: 100%;
+        height: 10rem;
         width: 100%;
       }
 
@@ -483,13 +557,6 @@
 
 
   &__page {
-    /*margin-right: 100px;*/
-    /*background-color:blue;*/
-    /*margin-left: 2rem;*/
-    /*margin-right: 2rem;*/
-    /*float: left;*/
-    /*height: 100%;*/
-    /*width: 33rem;*/
 
     @mixin atSmall {
       margin-left: 2rem;
