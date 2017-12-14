@@ -10339,15 +10339,15 @@ var _ModalPlayer = __webpack_require__(2);
 
 var _ModalPlayer2 = _interopRequireDefault(_ModalPlayer);
 
-var _Grid = __webpack_require__(4);
+var _Grid = __webpack_require__(5);
 
 var _Grid2 = _interopRequireDefault(_Grid);
 
-var _Nav = __webpack_require__(5);
+var _Nav = __webpack_require__(6);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
-var _Menu = __webpack_require__(6);
+var _Menu = __webpack_require__(7);
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
@@ -10375,13 +10375,15 @@ var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _plyr = __webpack_require__(3);
+var _PlyrControls = __webpack_require__(3);
 
-var _plyr2 = _interopRequireDefault(_plyr);
+var _PlyrControls2 = _interopRequireDefault(_PlyrControls);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var plyrControls = new _PlyrControls2.default();
 
 var ModalPlayer = function () {
     function ModalPlayer() {
@@ -10398,7 +10400,7 @@ var ModalPlayer = function () {
     _createClass(ModalPlayer, [{
         key: 'events',
         value: function events() {
-            this.openModalButton.click(this.openModal.bind(this)).click(this.getMedia);
+            this.openModalButton.click(this.openModal.bind(this)).click(plyrControls.getMedia);
 
             this.closeModalButton.click(this.closeModal.bind(this));
 
@@ -10427,8 +10429,60 @@ var ModalPlayer = function () {
             return false;
         }
     }, {
+        key: 'closeModal',
+        value: function closeModal() {
+            var players = [];
+
+            this.modal.removeClass("modal--is-visible");
+
+            (0, _jquery2.default)(".plyr__container").html("");
+
+            return false;
+        }
+    }]);
+
+    return ModalPlayer;
+}();
+
+exports.default = ModalPlayer;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _plyr = __webpack_require__(4);
+
+var _plyr2 = _interopRequireDefault(_plyr);
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PlyrControls = function () {
+    function PlyrControls() {
+        _classCallCheck(this, PlyrControls);
+
+        this.divs;
+    }
+
+    _createClass(PlyrControls, [{
         key: 'getMedia',
         value: function getMedia() {
+            var _this = this;
+
             var moduleName = (0, _jquery2.default)(this).attr('id');
             var player = [];
             var source = [];
@@ -10479,11 +10533,11 @@ var ModalPlayer = function () {
             }).done(function () {
                 var instances = _plyr2.default.get();
 
-                var divs = (0, _jquery2.default)(".modal__video-player");
+                _this.divs = (0, _jquery2.default)(".modal__video-player");
 
                 var _loop = function _loop(x) {
                     var instance = instances[x];
-                    var activeDiv = divs[x];
+                    var activeDiv = _this.divs[x];
                     activeDiv.addEventListener('click', function () {
                         if (!instance.isPaused()) {
                             setTimeout(function () {
@@ -10498,26 +10552,15 @@ var ModalPlayer = function () {
                 }
             });
         }
-    }, {
-        key: 'closeModal',
-        value: function closeModal() {
-            var players = [];
-
-            this.modal.removeClass("modal--is-visible");
-
-            (0, _jquery2.default)(".plyr__container").html("");
-
-            return false;
-        }
     }]);
 
-    return ModalPlayer;
+    return PlyrControls;
 }();
 
-exports.default = ModalPlayer;
+exports.default = PlyrControls;
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// ==========================================================================
@@ -14300,7 +14343,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// =============
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14394,7 +14437,7 @@ var Grid = function () {
 exports.default = Grid;
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14509,7 +14552,7 @@ var Nav = function () {
 exports.default = Nav;
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

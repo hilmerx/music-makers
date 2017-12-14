@@ -2,11 +2,10 @@ let path = require('path');
 
 module.exports = {
   entry: {
-    App: "./app/assets/scripts/App.js",
-    Vendor: "./app/assets/scripts/Vendor.js"
+    App: "./app/assets/scripts/App.js"
   },
   output: {
-    path: path.resolve(__dirname, "./app/temp/scripts"),
+    path: path.resolve(__dirname, "./dist/assets/scripts"),
     filename: "[name].js",
     libraryTarget: 'var',
     library: 'EntryPoint'

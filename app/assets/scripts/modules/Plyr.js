@@ -3,7 +3,6 @@ import plyr from 'plyr'
 
 class Plyr {
     constructor() {
-        this.videoWrapper = $(".plyr__video-wrapper")
         this.events()
     }
 
