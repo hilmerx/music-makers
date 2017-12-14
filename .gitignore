@@ -5,9 +5,9 @@
 *.log
 *.rej
 *.swo
-*.mp4
-*.mov
-*.m4v
+#*.mp4
+#*.mov
+#*.m4v
 *.swp
 *.vi
 *~
