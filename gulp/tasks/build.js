@@ -41,7 +41,7 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder'], () => {
 
 })
 
-gulp.task('optimizeImages', () => {
+gulp.task('optimizeImages', ['deleteDistFolder'], () => {
     return gulp.src(['./app/assets/images/**/*'])
         .pipe(imagemin({
             progressive: true,
