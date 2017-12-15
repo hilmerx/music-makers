@@ -481,6 +481,7 @@ a {
   margin: auto;
   text-align: center;
   z-index:-15;
+     background-color: red;
 }
 
 @media (min-width: 530px) {
@@ -655,6 +656,8 @@ a {
   }
 
 .feed {
+     background-color: red;
+    
     text-align:left;
     width: 100%;
     -webkit-transition: all .3s ease-out;
