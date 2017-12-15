@@ -481,7 +481,6 @@ a {
   margin: auto;
   text-align: center;
   z-index:-15;
-     background-color: red;
 }
 
 @media (min-width: 530px) {

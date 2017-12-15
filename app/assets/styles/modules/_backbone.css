@@ -4,7 +4,6 @@
   margin: auto;
   text-align: center;
   z-index:-15;
-     background-color: red;
 
   @mixin atSmall {
     overflow: hidden;
