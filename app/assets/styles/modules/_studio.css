@@ -41,9 +41,11 @@
       width: 18rem;
       /*position: absolute;*/
       padding: 0.15rem 2.4rem 2rem 1.2rem;
+        opacity: 0.93;
 
       & img {
         max-width: 100%;
+
       }
     }
 
