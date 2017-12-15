@@ -10,3 +10,4 @@ let nav = new Nav()
 let modalPlayer = new ModalPlayer()
 let menu = new Menu()
 runGoogleAnalytics()
+

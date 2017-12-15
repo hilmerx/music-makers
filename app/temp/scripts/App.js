@@ -10351,12 +10351,15 @@ var _Menu = __webpack_require__(7);
 
 var _Menu2 = _interopRequireDefault(_Menu);
 
+var _GoogleAnalytics = __webpack_require__(8);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var grid = new _Grid2.default();
 var nav = new _Nav2.default();
 var modalPlayer = new _ModalPlayer2.default();
 var menu = new _Menu2.default();
+(0, _GoogleAnalytics.runGoogleAnalytics)();
 
 /***/ }),
 /* 2 */
@@ -14626,7 +14629,7 @@ var Menu = function () {
       }.bind(this));
 
       this.studioButtonDesktop.click(function () {
-        this.openPageModal("studio");
+        this.openPageModal(this.studioButtonDesktop);
       }.bind(this));
 
       this.aboutButtonDesktop.click(function () {
@@ -14653,7 +14656,7 @@ var Menu = function () {
       }.bind(this));
 
       this.studioButton.click(function () {
-        this.openPageModal("studio");
+        this.openPageModal(this.studioButton);
         this.toggleMenu();
       }.bind(this));
 
@@ -14682,6 +14685,7 @@ var Menu = function () {
     value: function openPageModal(element) {
       var connectedDivName = void 0;
       var connectedDiv = void 0;
+
       //changes the underline
       this.currentMenuElement.removeClass("menu-modal__text--is-active");
       this.currentMenuElementDesktop.removeClass("menu-modal__text--is-active");
@@ -14705,6 +14709,29 @@ var Menu = function () {
 }();
 
 exports.default = Menu;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.runGoogleAnalytics = runGoogleAnalytics;
+function runGoogleAnalytics() {
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments);
+        }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-41505850-1', 'musicmakers.se');
+    ga('send', 'pageview');
+}
 
 /***/ })
 /******/ ]);

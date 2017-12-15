@@ -5,7 +5,7 @@ module.exports = {
     App: "./app/assets/scripts/App.js"
   },
   output: {
-    path: path.resolve(__dirname, "./dist/assets/scripts"),
+    path: path.resolve(__dirname, "./app/temp/scripts"),
     filename: "[name].js",
     libraryTarget: 'var',
     library: 'EntryPoint'

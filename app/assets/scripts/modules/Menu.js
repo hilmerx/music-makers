@@ -31,6 +31,7 @@ class Menu {
     this.currentMenuElement = this.commercialsButton
     this.currentActiveDiv = this.commercialsDiv
 
+
     this.events()
   }
 
@@ -50,7 +51,7 @@ class Menu {
     }.bind(this))
 
     this.studioButtonDesktop.click( function() {
-      this.openPageModal("studio")
+      this.openPageModal(this.studioButtonDesktop)
     }.bind(this))
 
     this.aboutButtonDesktop.click( function() {
@@ -78,7 +79,7 @@ class Menu {
     }.bind(this))
 
     this.studioButton.click( function() {
-      this.openPageModal("studio")
+      this.openPageModal(this.studioButton)
       this.toggleMenu()
 
     }.bind(this))
@@ -110,6 +111,7 @@ class Menu {
   openPageModal(element) {
     let connectedDivName
     let connectedDiv
+
     //changes the underline
     this.currentMenuElement.removeClass("menu-modal__text--is-active")
     this.currentMenuElementDesktop.removeClass("menu-modal__text--is-active")
